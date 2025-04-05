@@ -10,9 +10,6 @@
 - [المساهمة](#المساهمة)
 - [الرخصة](#الرخصة)
 
-## التثبيت
-
-لتثبيت المشروع، اتبع الخطوات التالية:
 
 ```bash
 git clone https://github.com/islamux/who-wants-million-vue2.git
