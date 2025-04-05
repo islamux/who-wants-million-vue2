@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,24 +21,29 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden; /* منع التمرير الزائد */
+            overflow: auto; /* السماح بالتمرير عند الحاجة */
+            /* منع التمرير الزائد */
         }
 
         /* تصميم مشابه لواجهة البرنامج */
         #app {
             width: 100%;
-            max-width: 900px; /* تحديد عرض أقصى */
+            max-width: 900px;
+            /* تحديد عرض أقصى */
             margin: auto;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6); /* خلفية شبه شفافة */
+            background-color: rgba(0, 0, 0, 0.6);
+            /* خلفية شبه شفافة */
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 2px solid #ffd700; /* إطار ذهبي */
+            border: 2px solid #ffd700;
+            /* إطار ذهبي */
         }
 
         .question-container {
             background-color: rgba(40, 40, 90, 0.8);
-            border: 2px solid #6a5acd; /* إطار بنفسجي */
+            border: 2px solid #6a5acd;
+            /* إطار بنفسجي */
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
@@ -50,34 +56,41 @@
             width: 100%;
             margin-bottom: 10px;
             padding: 15px;
-            background: linear-gradient(to right, #4a00e0, #8e2de2); /* تدرج بنفسجي */
+            background: linear-gradient(to right, #4a00e0, #8e2de2);
+            /* تدرج بنفسجي */
             color: white;
             border: 1px solid #ddd;
             border-radius: 8px;
-            text-align: right; /* محاذاة النص لليمين */
+            text-align: right;
+            /* محاذاة النص لليمين */
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1rem; /* حجم خط مناسب */
+            font-size: 1rem;
+            /* حجم خط مناسب */
         }
 
         .options button:hover:not(:disabled) {
             background: linear-gradient(to right, #5e17e8, #a045e8);
             transform: scale(1.02);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3); /* ظل ذهبي عند المرور */
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            /* ظل ذهبي عند المرور */
         }
 
         .options button.selected {
-            background: linear-gradient(to right, #ff8c00, #ffa500); /* برتقالي للإجابة المختارة */
+            background: linear-gradient(to right, #ff8c00, #ffa500);
+            /* برتقالي للإجابة المختارة */
             border-color: #ffd700;
         }
 
         .options button.correct {
-            background: linear-gradient(to right, #00b09b, #96c93d); /* أخضر للإجابة الصحيحة */
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            /* أخضر للإجابة الصحيحة */
             animation: pulse-correct 1s infinite;
         }
 
         .options button.incorrect {
-            background: linear-gradient(to right, #d31027, #ea384d); /* أحمر للإجابة الخاطئة */
+            background: linear-gradient(to right, #d31027, #ea384d);
+            /* أحمر للإجابة الخاطئة */
             animation: shake-incorrect 0.5s;
         }
 
@@ -87,24 +100,31 @@
         }
 
         .lifelines button {
-            background-color: #6a5acd; /* بنفسجي */
-            border: 1px solid #ffd700; /* ذهبي */
+            background-color: #6a5acd;
+            /* بنفسجي */
+            border: 1px solid #ffd700;
+            /* ذهبي */
             padding: 8px 12px;
             margin: 0 5px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
         .lifelines button:hover:not(:disabled) {
             background-color: #836fff;
         }
+
         .lifelines button:disabled {
             opacity: 0.5;
             cursor: not-allowed;
-            background-color: #444; /* رمادي داكن عند التعطيل */
+            background-color: #444;
+            /* رمادي داكن عند التعطيل */
             border-color: #666;
         }
+
         .lifelines button.used {
-             text-decoration: line-through; /* خط يتوسط النص للإشارة للاستخدام */
+            text-decoration: line-through;
+            /* خط يتوسط النص للإشارة للاستخدام */
         }
 
         .progress-bar {
@@ -118,12 +138,14 @@
 
         .progress-bar-inner {
             height: 100%;
-            background: linear-gradient(to right, #ffd700, #f0a500); /* تدرج ذهبي */
+            background: linear-gradient(to right, #ffd700, #f0a500);
+            /* تدرج ذهبي */
             transition: width 0.5s ease;
             text-align: center;
             color: #333;
             font-weight: bold;
-            line-height: 20px; /* لمركزة النص عمودياً */
+            line-height: 20px;
+            /* لمركزة النص عمودياً */
         }
 
         .money-tree {
@@ -132,33 +154,42 @@
             margin: 0 0 20px 0;
             text-align: center;
         }
+
         .money-tree li {
             padding: 5px;
             margin-bottom: 3px;
             border-radius: 5px;
             background-color: rgba(0, 0, 0, 0.3);
-            color: #ccc; /* لون رمادي فاتح */
+            color: #ccc;
+            /* لون رمادي فاتح */
             transition: all 0.3s ease;
         }
+
         .money-tree li.current {
-            background-color: #ffd700; /* ذهبي للسؤال الحالي */
-            color: #302b63; /* لون النص داكن */
+            background-color: #ffd700;
+            /* ذهبي للسؤال الحالي */
+            color: #302b63;
+            /* لون النص داكن */
             font-weight: bold;
             transform: scale(1.05);
         }
-         .money-tree li.safe-haven {
-            border: 1px dashed #96c93d; /* إطار أخضر متقطع للمراحل الآمنة */
+
+        .money-tree li.safe-haven {
+            border: 1px dashed #96c93d;
+            /* إطار أخضر متقطع للمراحل الآمنة */
         }
 
         .timer {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #ffa500; /* برتقالي */
+            color: #ffa500;
+            /* برتقالي */
             margin-bottom: 15px;
         }
 
         .final-answer-btn {
-            background: linear-gradient(to right, #ff4e50, #f9d423); /* تدرج أحمر إلى أصفر */
+            background: linear-gradient(to right, #ff4e50, #f9d423);
+            /* تدرج أحمر إلى أصفر */
             color: #333;
             font-weight: bold;
             padding: 12px 25px;
@@ -166,12 +197,14 @@
             margin-top: 15px;
             transition: all 0.3s ease;
         }
+
         .final-answer-btn:hover:not(:disabled) {
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
         }
+
         .final-answer-btn:disabled {
-             opacity: 0.6;
+            opacity: 0.6;
             cursor: not-allowed;
         }
 
@@ -183,30 +216,61 @@
             font-size: 1.1rem;
             text-align: center;
         }
+
         .game-message.success {
-            background-color: rgba(0, 176, 155, 0.8); /* أخضر شبه شفاف */
+            background-color: rgba(0, 176, 155, 0.8);
+            /* أخضر شبه شفاف */
             border: 1px solid #00b09b;
         }
+
         .game-message.error {
-            background-color: rgba(211, 16, 39, 0.8); /* أحمر شبه شفاف */
+            background-color: rgba(211, 16, 39, 0.8);
+            /* أحمر شبه شفاف */
             border: 1px solid #d31027;
         }
+
         .game-message.info {
-             background-color: rgba(106, 90, 205, 0.8); /* بنفسجي شبه شفاف */
+            background-color: rgba(106, 90, 205, 0.8);
+            /* بنفسجي شبه شفاف */
             border: 1px solid #6a5acd;
         }
 
         /* تأثيرات الأنيميشن */
         @keyframes pulse-correct {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 176, 155, 0.7); }
-            70% { transform: scale(1.02); box-shadow: 0 0 10px 15px rgba(0, 176, 155, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 176, 155, 0); }
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 176, 155, 0.7);
+            }
+
+            70% {
+                transform: scale(1.02);
+                box-shadow: 0 0 10px 15px rgba(0, 176, 155, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 176, 155, 0);
+            }
         }
+
         @keyframes shake-incorrect {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
         }
 
         /* أيقونات Lucide */
@@ -215,7 +279,8 @@
             height: 1em;
             display: inline-block;
             vertical-align: middle;
-            margin-left: 5px; /* هامش يسار للأيقونة */
+            margin-left: 5px;
+            /* هامش يسار للأيقونة */
         }
 
         /* تصميم متجاوب */
@@ -223,45 +288,59 @@
             #app {
                 padding: 15px;
             }
+
             .options button {
                 padding: 12px;
                 font-size: 0.9rem;
             }
+
             .lifelines button {
-                 padding: 6px 10px;
-                 font-size: 0.9rem;
+                padding: 6px 10px;
+                font-size: 0.9rem;
             }
-             .question-container {
-                 padding: 15px;
-                 font-size: 1rem; /* تصغير حجم خط السؤال قليلاً */
+
+            .question-container {
+                padding: 15px;
+                font-size: 1rem;
+                /* تصغير حجم خط السؤال قليلاً */
             }
-             h1 {
-                 font-size: 1.5rem; /* تصغير العنوان الرئيسي */
+
+            h1 {
+                font-size: 1.5rem;
+                /* تصغير العنوان الرئيسي */
             }
+
             .money-tree {
-                font-size: 0.85rem; /* تصغير خط شجرة المال */
+                font-size: 0.85rem;
+                /* تصغير خط شجرة المال */
             }
         }
-         @media (max-width: 480px) {
-             .lifelines {
-                 display: flex;
-                 justify-content: space-around; /* توزيع المساعدات بشكل أفضل */
-             }
-             .lifelines button {
-                 margin: 0 2px; /* تقليل الهامش بين أزرار المساعدة */
-                 padding: 5px 8px;
-             }
-             .final-answer-btn {
-                 padding: 10px 20px;
-                 font-size: 0.9rem;
-             }
-             .game-message {
-                 font-size: 1rem;
-             }
-         }
 
+        @media (max-width: 480px) {
+            .lifelines {
+                display: flex;
+                justify-content: space-around;
+                /* توزيع المساعدات بشكل أفضل */
+            }
+
+            .lifelines button {
+                margin: 0 2px;
+                /* تقليل الهامش بين أزرار المساعدة */
+                padding: 5px 8px;
+            }
+
+            .final-answer-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .game-message {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="app" class="flex flex-col md:flex-row gap-4">
 
@@ -269,11 +348,13 @@
             <h1 class="text-3xl font-bold text-center mb-6 text-yellow-400">من سيربح المليون</h1>
 
             <div v-if="!gameStarted && !gameOver" class="text-center">
-                 <img src="https://placehold.co/300x150/302b63/FFD700?text=%D9%85%D9%86+%D8%B3%D9%8A%D8%B1%D8%A8%D8%AD+%D8%A7%D9%84%D9%85%D9%84%D9%8A%D9%88%D9%86" alt="شعار اللعبة" class="mx-auto mb-6 rounded-lg border-2 border-yellow-400">
+                <img src="src/million.jpeg" alt="شعار اللعبة"
+                    class="mx-auto mb-6 rounded-lg border-2 border-yellow-400">
                 <p class="mb-6 text-lg">هل أنت مستعد لتحدي المليون؟</p>
-                <button @click="startGame" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition duration-300">
+                <button @click="startGame"
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition duration-300">
                     ابدأ اللعبة
-                     <lucide name="play" class="lucide"></lucide>
+                    <lucide name="play" class="lucide"></lucide>
                 </button>
             </div>
 
@@ -282,53 +363,50 @@
                     {{ currentQuestion.text }}
                 </div>
 
-                 <div v-if="timerActive" class="timer text-center">
-                     الوقت المتبقي: {{ timerValue }} ثواني
-                 </div>
+                <div v-if="timerActive" class="timer text-center">
+                    الوقت المتبقي: {{ timerValue }} ثواني
+                </div>
 
                 <div class="options grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <button
-                        v-for="(option, index) in currentQuestion.options"
-                        :key="index"
-                        @click="selectAnswer(option, index)"
-                        :disabled="answerSelected !== null || option.disabled"
+                    <button v-for="(option, index) in currentQuestion.options" :key="index"
+                        @click="selectAnswer(option, index)" :disabled="answerSelected !== null || option.disabled"
                         :class="{
                             'selected': answerSelected === index,
                             'correct': revealAnswers && option.correct,
                             'incorrect': revealAnswers && !option.correct && answerSelected === index,
                             'opacity-50 cursor-not-allowed': option.disabled // لتعطيل الخيارات بعد استخدام 50:50
-                        }"
-                    >
+                        }">
                         <span class="font-bold">{{ String.fromCharCode(65 + index) }}:</span> {{ option.text }}
                     </button>
                 </div>
 
                 <div class="text-center mt-5">
-                     <button @click="confirmAnswer"
-                             :disabled="answerSelected === null || revealAnswers"
-                             class="final-answer-btn disabled:opacity-50 disabled:cursor-not-allowed">
-                         تأكيد الإجابة النهائية
-                         <lucide name="check-circle" class="lucide"></lucide>
-                     </button>
-                 </div>
+                    <button @click="confirmAnswer" :disabled="answerSelected === null || revealAnswers"
+                        class="final-answer-btn disabled:opacity-50 disabled:cursor-not-allowed">
+                        تأكيد الإجابة النهائية
+                        <lucide name="check-circle" class="lucide"></lucide>
+                    </button>
+                </div>
 
 
                 <div class="lifelines text-center my-5">
-                    <button @click="useFiftyFifty" :disabled="lifelines.fiftyFiftyUsed || revealAnswers" :class="{ 'used': lifelines.fiftyFiftyUsed }">
+                    <button @click="useFiftyFifty" :disabled="lifelines.fiftyFiftyUsed || revealAnswers"
+                        :class="{ 'used': lifelines.fiftyFiftyUsed }">
                         50:50
                         <lucide name="star-half" class="lucide"></lucide>
                     </button>
-                    <button @click="useAudience" :disabled="lifelines.audienceUsed || revealAnswers" :class="{ 'used': lifelines.audienceUsed }">
+                    <button @click="useAudience" :disabled="lifelines.audienceUsed || revealAnswers"
+                        :class="{ 'used': lifelines.audienceUsed }">
                         سؤال الجمهور
                         <lucide name="users" class="lucide"></lucide>
                     </button>
-                     <button @click="walkAway" :disabled="revealAnswers">
-                         انسحاب
-                         <lucide name="log-out" class="lucide"></lucide>
-                     </button>
-                     </div>
+                    <button @click="walkAway" :disabled="revealAnswers">
+                        انسحاب
+                        <lucide name="log-out" class="lucide"></lucide>
+                    </button>
+                </div>
 
-                 <div v-if="audiencePoll" class="game-message info mt-4">
+                <div v-if="audiencePoll" class="game-message info mt-4">
                     <h3 class="font-bold mb-2">نتائج تصويت الجمهور:</h3>
                     <ul>
                         <li v-for="(percentage, optionIndex) in audiencePoll" :key="optionIndex">
@@ -339,13 +417,15 @@
             </div>
 
             <div v-if="gameOver" class="text-center">
-                <h2 class="text-2xl font-bold mb-4" :class="{'text-green-400': gameWon, 'text-red-400': !gameWon && !walkedAway, 'text-yellow-400': walkedAway}">
+                <h2 class="text-2xl font-bold mb-4"
+                    :class="{'text-green-400': gameWon, 'text-red-400': !gameWon && !walkedAway, 'text-yellow-400': walkedAway}">
                     {{ gameOverMessage }}
                 </h2>
-                 <p class="text-xl mb-6">
+                <p class="text-xl mb-6">
                     {{ finalWinningsMessage }}
-                 </p>
-                <button @click="restartGame" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition duration-300">
+                </p>
+                <button @click="restartGame"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-xl transition duration-300">
                     العب مرة أخرى
                     <lucide name="refresh-cw" class="lucide"></lucide>
                 </button>
@@ -365,15 +445,15 @@
                 </div>
             </div>
             <ul class="money-tree">
-                <li v-for="(level, index) in moneyLevels.slice().reverse()" :key="index"
-                    :class="{
+                <li v-for="(level, index) in moneyLevels.slice().reverse()" :key="index" :class="{
                         'current': gameStarted && !gameOver && currentQuestionIndex === (moneyLevels.length - 1 - index),
                         'safe-haven': level.isSafeHaven,
                         'text-gray-500': gameStarted && !gameOver && currentQuestionIndex > (moneyLevels.length - 1 - index) // للأسئلة التي تم تجاوزها
                     }">
-                     <span class="font-bold">{{ moneyLevels.length - index }}.</span> {{ level.amount }}
-                     <lucide v-if="level.isSafeHaven" name="shield-check" class="lucide text-green-400 ml-1"></lucide>
-                     <lucide v-if="gameStarted && !gameOver && currentQuestionIndex === (moneyLevels.length - 1 - index)" name="eye" class="lucide text-blue-400 ml-1"></lucide>
+                    <span class="font-bold">{{ moneyLevels.length - index }}.</span> {{ level.amount }}
+                    <lucide v-if="level.isSafeHaven" name="shield-check" class="lucide text-green-400 ml-1"></lucide>
+                    <lucide v-if="gameStarted && !gameOver && currentQuestionIndex === (moneyLevels.length - 1 - index)"
+                        name="eye" class="lucide text-blue-400 ml-1"></lucide>
                 </li>
             </ul>
         </div>
@@ -420,12 +500,12 @@
                     { text: "من رسم لوحة الموناليزا؟", options: [{ text: "مايكل أنجلو", correct: false }, { text: "ليوناردو دا فينشي", correct: true }, { text: "رافائيل", correct: false }, { text: "فان جوخ", correct: false }], level: 7 },
                     { text: "ما هو المحيط الأكبر في العالم؟", options: [{ text: "الأطلسي", correct: false }, { text: "الهندي", correct: false }, { text: "المتجمد الشمالي", correct: false }, { text: "الهادئ", correct: true }], level: 8 },
                     { text: "كم عدد الدول العربية في قارة آسيا؟", options: [{ text: "10", correct: false }, { text: "11", correct: false }, { text: "12", correct: true }, { text: "13", correct: false }], level: 9 },
-                     { text: "ما هي الدولة التي لُقبت بـ 'بلاد الألف بحيرة'؟", options: [{ text: "السويد", correct: false }, { text: "فنلندا", correct: true }, { text: "النرويج", correct: false }, { text: "كندا", correct: false }], level: 10, isSafeHaven: true }, // مستوى آمن
-                     { text: "من هو مؤلف كتاب 'ألف ليلة وليلة'؟", options: [{ text: "الجاحظ", correct: false }, { text: "ابن المقفع", correct: false }, { text: "غير معروف/مجموعة مؤلفين", correct: true }, { text: "المتنبي", correct: false }], level: 11 },
-                     { text: "ما هي عملة اليابان؟", options: [{ text: "وون", correct: false }, { text: "يوان", correct: false }, { text: "دولار", correct: false }, { text: "ين", correct: true }], level: 12 },
-                     { text: "في أي قارة تقع صحراء أتاكاما؟", options: [{ text: "أفريقيا", correct: false }, { text: "آسيا", correct: false }, { text: "أمريكا الجنوبية", correct: true }, { text: "أستراليا", correct: false }], level: 13 },
-                     { text: "من هو أول رائد فضاء مشى على سطح القمر؟", options: [{ text: "يوري جاجارين", correct: false }, { text: "نيل أرمسترونج", correct: true }, { text: "باز ألدرن", correct: false }, { text: "جون جلين", correct: false }], level: 14 },
-                     { text: "ما هو الاسم القديم لمدينة إسطنبول؟", options: [{ text: "أنقرة", correct: false }, { text: "بيزنطة", correct: false }, { text: "القسطنطينية", correct: true }, { text: "أزمير", correct: false }], level: 15, isSafeHaven: true }, // مستوى المليون
+                    { text: "ما هي الدولة التي لُقبت بـ 'بلاد الألف بحيرة'؟", options: [{ text: "السويد", correct: false }, { text: "فنلندا", correct: true }, { text: "النرويج", correct: false }, { text: "كندا", correct: false }], level: 10, isSafeHaven: true }, // مستوى آمن
+                    { text: "من هو مؤلف كتاب 'ألف ليلة وليلة'؟", options: [{ text: "الجاحظ", correct: false }, { text: "ابن المقفع", correct: false }, { text: "غير معروف/مجموعة مؤلفين", correct: true }, { text: "المتنبي", correct: false }], level: 11 },
+                    { text: "ما هي عملة اليابان؟", options: [{ text: "وون", correct: false }, { text: "يوان", correct: false }, { text: "دولار", correct: false }, { text: "ين", correct: true }], level: 12 },
+                    { text: "في أي قارة تقع صحراء أتاكاما؟", options: [{ text: "أفريقيا", correct: false }, { text: "آسيا", correct: false }, { text: "أمريكا الجنوبية", correct: true }, { text: "أستراليا", correct: false }], level: 13 },
+                    { text: "من هو أول رائد فضاء مشى على سطح القمر؟", options: [{ text: "يوري جاجارين", correct: false }, { text: "نيل أرمسترونج", correct: true }, { text: "باز ألدرن", correct: false }, { text: "جون جلين", correct: false }], level: 14 },
+                    { text: "ما هو الاسم القديم لمدينة إسطنبول؟", options: [{ text: "أنقرة", correct: false }, { text: "بيزنطة", correct: false }, { text: "القسطنطينية", correct: true }, { text: "أزمير", correct: false }], level: 15, isSafeHaven: true }, // مستوى المليون
                 ],
                 moneyLevels: [ // مستويات الجوائز
                     { amount: "100 ريال", isSafeHaven: false },
@@ -482,36 +562,36 @@
                 safeHavenPrize() {
                     // الحصول على آخر جائزة آمنة وصل إليها اللاعب
                     let lastSafeHavenAmount = "0 ريال";
-                    for (let i = this.currentQuestionIndex -1; i >= 0; i--) {
-                         if (this.moneyLevels[i] && this.moneyLevels[i].isSafeHaven) {
-                             lastSafeHavenAmount = this.moneyLevels[i].amount;
-                             break;
-                         }
+                    for (let i = this.currentQuestionIndex - 1; i >= 0; i--) {
+                        if (this.moneyLevels[i] && this.moneyLevels[i].isSafeHaven) {
+                            lastSafeHavenAmount = this.moneyLevels[i].amount;
+                            break;
+                        }
                     }
                     return lastSafeHavenAmount;
                 },
-                 gameOverMessage() {
-                     // تحديد رسالة نهاية اللعبة
-                     if (this.walkedAway) {
-                         return "لقد اخترت الانسحاب!";
-                     } else if (this.gameWon) {
-                         return "تهانينا! لقد ربحت المليون!";
-                     } else if (this.gameOver) {
-                         return "للأسف! إجابة خاطئة.";
-                     }
-                     return "";
-                 },
-                 finalWinningsMessage() {
+                gameOverMessage() {
+                    // تحديد رسالة نهاية اللعبة
+                    if (this.walkedAway) {
+                        return "لقد اخترت الانسحاب!";
+                    } else if (this.gameWon) {
+                        return "تهانينا! لقد ربحت المليون!";
+                    } else if (this.gameOver) {
+                        return "للأسف! إجابة خاطئة.";
+                    }
+                    return "";
+                },
+                finalWinningsMessage() {
                     // تحديد المبلغ النهائي الذي فاز به اللاعب
-                     if (this.walkedAway) {
-                         return `لقد فزت بمبلغ ${this.currentPrize}.`;
-                     } else if (this.gameWon) {
-                         return "أنت الآن مليونير!";
-                     } else if (this.gameOver) {
-                         return `لقد عدت إلى المنزل بمبلغ ${this.safeHavenPrize}.`;
-                     }
-                     return "";
-                 }
+                    if (this.walkedAway) {
+                        return `لقد فزت بمبلغ ${this.currentPrize}.`;
+                    } else if (this.gameWon) {
+                        return "أنت الآن مليونير!";
+                    } else if (this.gameOver) {
+                        return `لقد عدت إلى المنزل بمبلغ ${this.safeHavenPrize}.`;
+                    }
+                    return "";
+                }
             },
             methods: {
                 // --- التحكم في الأصوات ---
@@ -527,52 +607,52 @@
                             onerror: (err) => console.error("Error loading start sound:", err)
                         }).toDestination();
 
-                         this.sounds.correct = new Tone.Synth({
-                             oscillator: { type: "sine" },
-                             envelope: { attack: 0.01, decay: 0.2, sustain: 0.1, release: 0.3 }
-                         }).toDestination();
-                         this.sounds.correct.volume.value = -10; // خفض الصوت قليلاً
+                        this.sounds.correct = new Tone.Synth({
+                            oscillator: { type: "sine" },
+                            envelope: { attack: 0.01, decay: 0.2, sustain: 0.1, release: 0.3 }
+                        }).toDestination();
+                        this.sounds.correct.volume.value = -10; // خفض الصوت قليلاً
 
-                         this.sounds.incorrect = new Tone.Synth({
-                              oscillator: { type: "square" },
-                              envelope: { attack: 0.01, decay: 0.4, sustain: 0, release: 0.1 }
-                         }).toDestination();
-                         this.sounds.incorrect.volume.value = -10;
-
-
-                         this.sounds.lifeline = new Tone.Synth({
-                             oscillator: { type: "triangle" },
-                             envelope: { attack: 0.05, decay: 0.3, sustain: 0.1, release: 0.5 }
-                         }).toDestination();
-                         this.sounds.lifeline.volume.value = -8;
-
-                         this.sounds.timerTick = new Tone.MembraneSynth({
-                             pitchDecay: 0.008,
-                             octaves: 2,
-                             envelope: { attack: 0.001, decay: 0.1, sustain: 0 }
-                         }).toDestination();
-                         this.sounds.timerTick.volume.value = -15;
-
-                         this.sounds.finalAnswer = new Tone.MetalSynth({
-                             frequency: 150,
-                             envelope: { attack: 0.01, decay: 0.4, release: 0.2 },
-                             harmonicity: 3.1,
-                             modulationIndex: 16,
-                             resonance: 4000,
-                             octaves: 1.5
-                         }).toDestination();
-                         this.sounds.finalAnswer.volume.value = -12;
-
-                         this.sounds.winMillion = new Tone.Player({
-                             url: "https://cdn.jsdelivr.net/gh/Tonejs/Tone.js/examples/audio/berklee/ah_oh.mp3", // استبدل بصوت فوز مناسب
-                             onload: () => console.log("Win sound loaded"),
-                             onerror: (err) => console.error("Error loading win sound:", err)
-                         }).toDestination();
-                         this.sounds.winMillion.volume.value = -5;
+                        this.sounds.incorrect = new Tone.Synth({
+                            oscillator: { type: "square" },
+                            envelope: { attack: 0.01, decay: 0.4, sustain: 0, release: 0.1 }
+                        }).toDestination();
+                        this.sounds.incorrect.volume.value = -10;
 
 
-                         // يمكنك إضافة صوت خلفية إذا أردت
-                         // this.sounds.background = new Tone.Player({...}).toDestination().loop = true;
+                        this.sounds.lifeline = new Tone.Synth({
+                            oscillator: { type: "triangle" },
+                            envelope: { attack: 0.05, decay: 0.3, sustain: 0.1, release: 0.5 }
+                        }).toDestination();
+                        this.sounds.lifeline.volume.value = -8;
+
+                        this.sounds.timerTick = new Tone.MembraneSynth({
+                            pitchDecay: 0.008,
+                            octaves: 2,
+                            envelope: { attack: 0.001, decay: 0.1, sustain: 0 }
+                        }).toDestination();
+                        this.sounds.timerTick.volume.value = -15;
+
+                        this.sounds.finalAnswer = new Tone.MetalSynth({
+                            frequency: 150,
+                            envelope: { attack: 0.01, decay: 0.4, release: 0.2 },
+                            harmonicity: 3.1,
+                            modulationIndex: 16,
+                            resonance: 4000,
+                            octaves: 1.5
+                        }).toDestination();
+                        this.sounds.finalAnswer.volume.value = -12;
+
+                        this.sounds.winMillion = new Tone.Player({
+                            url: "https://cdn.jsdelivr.net/gh/Tonejs/Tone.js/examples/audio/berklee/ah_oh.mp3", // استبدل بصوت فوز مناسب
+                            onload: () => console.log("Win sound loaded"),
+                            onerror: (err) => console.error("Error loading win sound:", err)
+                        }).toDestination();
+                        this.sounds.winMillion.volume.value = -5;
+
+
+                        // يمكنك إضافة صوت خلفية إذا أردت
+                        // this.sounds.background = new Tone.Player({...}).toDestination().loop = true;
 
                     } catch (error) {
                         console.error("Failed to start Audio Context or load sounds:", error);
@@ -611,7 +691,7 @@
                     this.resetGameData();
                     this.gameStarted = true;
                     this.nextQuestion();
-                     // if (this.sounds.background) this.sounds.background.start(); // بدء تشغيل موسيقى الخلفية
+                    // if (this.sounds.background) this.sounds.background.start(); // بدء تشغيل موسيقى الخلفية
                 },
                 nextQuestion() {
                     this.currentQuestionIndex++;
@@ -623,9 +703,9 @@
                     this.startTimer();
                     // تحديث أيقونات lucide إذا لزم الأمر
                     this.$nextTick(() => {
-                       if (typeof lucide !== 'undefined') {
+                        if (typeof lucide !== 'undefined') {
                             lucide.createIcons();
-                       }
+                        }
                     });
                 },
                 selectAnswer(option, index) {
@@ -667,13 +747,13 @@
                             this.playSound('incorrect');
                             this.gameMessage = { text: `إجابة خاطئة! الإجابة الصحيحة كانت: ${this.currentQuestion.options.find(o => o.correct).text}`, type: 'error' };
                             this.gameOver = true;
-                             // if (this.sounds.background) this.sounds.background.stop(); // إيقاف موسيقى الخلفية عند الخسارة
+                            // if (this.sounds.background) this.sounds.background.stop(); // إيقاف موسيقى الخلفية عند الخسارة
                         }
-                         // تحديث الأيقونات بعد تغيير الحالة
+                        // تحديث الأيقونات بعد تغيير الحالة
                         this.$nextTick(() => {
-                           if (typeof lucide !== 'undefined') {
+                            if (typeof lucide !== 'undefined') {
                                 lucide.createIcons();
-                           }
+                            }
                         });
                     }, 1500); // تأخير 1.5 ثانية قبل كشف النتيجة
                 },
@@ -682,7 +762,7 @@
                     this.walkedAway = true;
                     this.gameOver = true;
                     this.gameMessage = { text: `لقد اخترت الانسحاب بالجائزة الحالية: ${this.currentPrize}`, type: 'info' };
-                     // if (this.sounds.background) this.sounds.background.stop();
+                    // if (this.sounds.background) this.sounds.background.stop();
                 },
                 restartGame() {
                     this.resetGameData();
@@ -690,12 +770,12 @@
                     this.gameOver = false;
                     this.gameWon = false;
                     this.walkedAway = false;
-                     // تحديث الأيقونات
-                     this.$nextTick(() => {
+                    // تحديث الأيقونات
+                    this.$nextTick(() => {
                         if (typeof lucide !== 'undefined') {
-                             lucide.createIcons();
+                            lucide.createIcons();
                         }
-                     });
+                    });
                 },
                 resetGameData() {
                     // إعادة تعيين بيانات اللعبة لحالة البداية
@@ -731,18 +811,18 @@
 
                     // تعطيل الإجابتين الخاطئتين الأخريين
                     this.currentQuestion.options.forEach((opt, index) => {
-                         if (!opt.correct && index !== indexToKeep) {
-                             // استخدام Vue.set لضمان التفاعلية عند إضافة خاصية جديدة
-                             this.$set(this.currentQuestion.options[index], 'disabled', true);
-                             // opt.disabled = true; // قد لا يكون تفاعليًا دائمًا في Vue 2 بدون Vue.set
-                         }
-                    });
-                     // تحديث الأيقونات
-                     this.$nextTick(() => {
-                        if (typeof lucide !== 'undefined') {
-                             lucide.createIcons();
+                        if (!opt.correct && index !== indexToKeep) {
+                            // استخدام Vue.set لضمان التفاعلية عند إضافة خاصية جديدة
+                            this.$set(this.currentQuestion.options[index], 'disabled', true);
+                            // opt.disabled = true; // قد لا يكون تفاعليًا دائمًا في Vue 2 بدون Vue.set
                         }
-                     });
+                    });
+                    // تحديث الأيقونات
+                    this.$nextTick(() => {
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    });
                 },
                 useAudience() {
                     if (this.lifelines.audienceUsed || this.revealAnswers) return;
@@ -750,12 +830,12 @@
                     this.lifelines.audienceUsed = true;
                     this.audiencePoll = this.generateAudiencePoll();
                     this.gameMessage = { text: "تم استطلاع رأي الجمهور. انظر النتائج أدناه.", type: 'info' };
-                     // تحديث الأيقونات
-                     this.$nextTick(() => {
+                    // تحديث الأيقونات
+                    this.$nextTick(() => {
                         if (typeof lucide !== 'undefined') {
-                             lucide.createIcons();
+                            lucide.createIcons();
                         }
-                     });
+                    });
                 },
                 generateAudiencePoll() {
                     // محاكاة تصويت الجمهور - يعطي احتمالية أعلى للإجابة الصحيحة
@@ -783,13 +863,13 @@
                             }
                         }
                     }
-                     // التأكد من أن المجموع 100% (قد يكون هناك خطأ بسيط في التقريب)
-                     let currentSum = percentages.reduce((a, b) => a + b, 0);
-                     if (currentSum !== 100 && remainingPercentage > 0) {
-                         // إضافة الفرق لأي خيار غير صحيح
-                         let incorrectIndex = percentages.findIndex((p, idx) => idx !== correctAnswerIndex);
-                         if(incorrectIndex !== -1) percentages[incorrectIndex] += (100 - currentSum);
-                     }
+                    // التأكد من أن المجموع 100% (قد يكون هناك خطأ بسيط في التقريب)
+                    let currentSum = percentages.reduce((a, b) => a + b, 0);
+                    if (currentSum !== 100 && remainingPercentage > 0) {
+                        // إضافة الفرق لأي خيار غير صحيح
+                        let incorrectIndex = percentages.findIndex((p, idx) => idx !== correctAnswerIndex);
+                        if (incorrectIndex !== -1) percentages[incorrectIndex] += (100 - currentSum);
+                    }
 
 
                     return percentages;
@@ -820,32 +900,33 @@
                     this.timerValue = 30;
                 },
                 handleTimeOut() {
-                     // التعامل مع انتهاء الوقت - يعتبر إجابة خاطئة
-                     this.playSound('incorrect');
-                     this.revealAnswers = true; // كشف الإجابة الصحيحة
-                     this.gameMessage = { text: `انتهى الوقت! الإجابة الصحيحة كانت: ${this.currentQuestion.options.find(o => o.correct).text}`, type: 'error' };
-                     this.gameOver = true;
-                     // if (this.sounds.background) this.sounds.background.stop();
+                    // التعامل مع انتهاء الوقت - يعتبر إجابة خاطئة
+                    this.playSound('incorrect');
+                    this.revealAnswers = true; // كشف الإجابة الصحيحة
+                    this.gameMessage = { text: `انتهى الوقت! الإجابة الصحيحة كانت: ${this.currentQuestion.options.find(o => o.correct).text}`, type: 'error' };
+                    this.gameOver = true;
+                    // if (this.sounds.background) this.sounds.background.stop();
                 }
             },
             mounted() {
                 // يمكنك استدعاء initializeSounds هنا أيضاً، لكن يفضل عند تفاعل المستخدم الأول
                 // this.initializeSounds();
 
-                 // تحديث الأيقونات عند التحميل الأولي
-                 this.$nextTick(() => {
+                // تحديث الأيقونات عند التحميل الأولي
+                this.$nextTick(() => {
                     if (typeof lucide !== 'undefined') {
-                         lucide.createIcons();
+                        lucide.createIcons();
                     }
-                 });
+                });
             },
-             beforeDestroy() {
-                 // إيقاف المؤقت والأصوات عند تدمير المكون
-                 this.stopTimer();
-                 // if (this.sounds.background) this.sounds.background.stop().dispose();
-                 // يمكنك إضافة dispose لبقية الأصوات إذا لزم الأمر لتنظيف الذاكرة
-             }
+            beforeDestroy() {
+                // إيقاف المؤقت والأصوات عند تدمير المكون
+                this.stopTimer();
+                // if (this.sounds.background) this.sounds.background.stop().dispose();
+                // يمكنك إضافة dispose لبقية الأصوات إذا لزم الأمر لتنظيف الذاكرة
+            }
         });
     </script>
 </body>
+
 </html>
